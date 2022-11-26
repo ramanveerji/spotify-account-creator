@@ -44,14 +44,19 @@ class Main:
 		
 
 	def gencredentailsmethod(self):
-		credentails = {}
-		credentails['gender']      = self.gender
-		credentails['birth_year']  = self.birth_year
-		credentails['birth_month'] = self.birth_month
-		credentails['birth_day']   = self.birth_day
-		credentails['password']    = self.password
+		credentails = {
+			'gender': self.gender,
+			'birth_year': self.birth_year,
+			'birth_month': self.birth_month,
+			'birth_day': self.birth_day,
+			'password': self.password,
+		}
+
 		username                   = string.ascii_letters + string.digits
-		username                   = ''.join(random.choice(username) for i in range(random.randint(7,11)))
+		username = ''.join(
+			random.choice(username) for _ in range(random.randint(7, 11))
+		)
+
 		credentails['username']    = username
 		credentails['email']       = self.email
 
